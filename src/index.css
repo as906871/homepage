@@ -1,13 +1,98 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #F5EFE0;
+    color: #1A1A1A;
+    margin: 0;
+    padding: 0;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .btn-gold {
+    @apply bg-gradient-to-r from-[#C9A84C] to-[#A88A35] text-white font-medium px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105 inline-flex items-center gap-2;
+  }
+
+  .btn-gold-outline {
+    @apply border-2 border-[#C9A84C] text-[#C9A84C] font-medium px-6 py-3 rounded-full transition-all duration-300 hover:bg-[#C9A84C] hover:text-white inline-flex items-center gap-2;
+  }
+
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl font-semibold text-[#1A1A1A] text-center mb-12;
+  }
+
+  .wave-bottom {
+    position: relative;
+  }
+
+  .wave-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #F5EFE0;
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5EFE0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A84C;
+  border-radius: 3px;
+}
+
+.wavy-divider {
+  position: relative;
+  overflow: hidden;
+}
+
+.wavy-divider::before {
+  content: '';
+  display: block;
+  height: 50px;
+  background: #F5EFE0;
+  clip-path: ellipse(55% 100% at 50% 0%);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #D4AF5A44;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: #C9A84C;
+}
+.hero-overlay {
+  background: linear-gradient(to right, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.1) 100%);
+}
+
+.step-line {
+  position: absolute;
+  top: 24px;
+  left: calc(50% + 24px);
+  width: calc(100% - 48px);
+  height: 1px;
+  border-top: 2px dashed #C9A84C44;
 }
