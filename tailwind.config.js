@@ -14,7 +14,7 @@ export default {
           50: '#FBF5E6',
         },
         cream: '#F5EFE0',
-        dark: '#1A1A1A',
+        dark: '#000000',
         charcoal: '#2C2C2C',
       },
       fontFamily: {

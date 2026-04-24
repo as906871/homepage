@@ -42,7 +42,7 @@ const TreatmentCard = ({ title, description, image, reverse = false }) => {
           ${reverse ? "md:order-1 md:pr-2" : "md:order-2 md:pl-2"}
         `}
       >
-        <h3 className="font-serif text-[30px] font-semibold text-[#1A1A1A] mb-4">
+        <h3 className="font-serif text-[30px] font-semibold text-[#000000] mb-4">
           {title}
         </h3>
 

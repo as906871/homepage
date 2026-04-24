@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import { FiChevronDown, FiMenu, FiX } from 'react-icons/fi'
+import React, { useState } from "react";
+import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
 
 const NavDropdown = ({ label, items }) => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   return (
     <div
       className="relative"
@@ -13,7 +13,7 @@ const NavDropdown = ({ label, items }) => {
         {label}
         <FiChevronDown
           size={14}
-          className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+          className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
         />
       </button>
       {open && (
@@ -30,55 +30,67 @@ const NavDropdown = ({ label, items }) => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
 const Navbar = () => {
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#111111]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="w-full mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-[60px]">
-
           <div className="flex items-center gap-2.5 flex-shrink-0">
             <div
               className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
-              style={{ background: 'linear-gradient(135deg, #D4A84B 0%, #A8731A 100%)' }}
+              style={{
+                background: "linear-gradient(135deg, #D4A84B 0%, #A8731A 100%)",
+              }}
             >
               <span className="text-white font-bold text-xs font-sans">AP</span>
             </div>
+
             <span className="text-white font-sans text-sm font-semibold tracking-wide">
               Ada Psychiatry
             </span>
           </div>
 
-          <div className="hidden md:flex items-center gap-7">
-            <NavDropdown
-              label="Who we are"
-              items={['About Us', 'Our Team', 'Our Mission']}
-            />
-            <NavDropdown
-              label="Who we treat"
-              items={['Mental Health', 'Addiction & Recovery', 'Weight Management']}
-            />
-            <a
-              href="#services"
-              className="text-white hover:text-[#C8973A] transition-colors duration-200 text-sm font-normal tracking-wide"
-            >
-              Services
-            </a>
-            <NavDropdown
-              label="Resources"
-              items={['Blog', 'FAQs', 'Fees and Insurance']}
-            />
-          </div>
+          <div className="hidden md:flex items-center gap-12">
+            <div className="flex items-center gap-7">
+              <NavDropdown
+                label="Who we are"
+                items={["About Us", "Our Team", "Our Mission"]}
+              />
 
-          <div className="hidden md:block flex-shrink-0">
+              <NavDropdown
+                label="Who we treat"
+                items={[
+                  "Mental Health",
+                  "Addiction & Recovery",
+                  "Weight Management",
+                ]}
+              />
+
+              <a
+                href="#services"
+                className="text-white hover:text-[#C8973A] transition-colors duration-200 text-sm font-normal tracking-wide"
+              >
+                Services
+              </a>
+
+              <NavDropdown
+                label="Resources"
+                items={["Blog", "FAQs", "Fees and Insurance"]}
+              />
+            </div>
+
             <a
               href="#contact"
-              className="text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-200 hover:brightness-110"
-              style={{ background: 'linear-gradient(135deg, #D4A84B 0%, #C8973A 40%, #A8731A 100%)' }}
+              className="text-black text-sm font-medium px-5 py-1.5 rounded-full transition-all duration-200 hover:brightness-110 whitespace-nowrap"
+              style={{
+                background:
+                  "linear-gradient(90deg, #C18C2C 0%, #FCF38A 50%, #C18C2C 100%)",
+              }}
             >
               Book an Appointment
             </a>
@@ -95,21 +107,25 @@ const Navbar = () => {
 
       {mobileOpen && (
         <div className="md:hidden bg-[#111111] border-t border-gray-800 px-6 py-4 space-y-1">
-          {['Who we are', 'Who we treat', 'Services', 'Resources'].map((item, i) => (
-            <a
-              key={i}
-              href="#"
-              className="flex items-center justify-between text-white hover:text-[#C8973A] text-sm py-3 border-b border-gray-800 last:border-0"
-            >
-              {item}
-              <FiChevronDown size={14} />
-            </a>
-          ))}
+          {["Who we are", "Who we treat", "Services", "Resources"].map(
+            (item, i) => (
+              <a
+                key={i}
+                href="#"
+                className="flex items-center justify-between text-white hover:text-[#C8973A] text-sm py-3 border-b border-gray-800 last:border-0"
+              >
+                {item}
+                <FiChevronDown size={14} />
+              </a>
+            ),
+          )}
           <div className="pt-3">
             <a
               href="#"
               className="block w-full text-center text-white text-sm font-medium px-5 py-3 rounded-full"
-              style={{ background: 'linear-gradient(135deg, #D4A84B 0%, #A8731A 100%)' }}
+              style={{
+                background: "linear-gradient(135deg, #D4A84B 0%, #A8731A 100%)",
+              }}
             >
               Book an Appointment
             </a>
@@ -117,7 +133,7 @@ const Navbar = () => {
         </div>
       )}
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

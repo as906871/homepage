@@ -16,7 +16,7 @@ const Button = ({
       onClick={onClick}
       className={`
         inline-flex items-center gap-2
-        px-8 py-3
+        px-6 py-2
         rounded-full
         text-black text-sm font-medium
         shadow-sm

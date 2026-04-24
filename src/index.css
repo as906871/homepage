@@ -9,7 +9,7 @@
   body {
     font-family: 'DM Sans', sans-serif;
     background-color: #F5EFE0;
-    color: #1A1A1A;
+    color: #000000;
     margin: 0;
     padding: 0;
   }
@@ -25,7 +25,7 @@
   }
 
   .section-title {
-    @apply font-serif text-3xl md:text-4xl font-semibold text-[#1A1A1A] text-center mb-12;
+    @apply font-serif text-3xl md:text-4xl font-semibold text-[#000000] text-center mb-12;
   }
 
   .wave-bottom {

@@ -10,7 +10,7 @@ const FAQ = ({ question, answer, defaultOpen = false }) => {
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between gap-4 text-left group"
       >
-        <span className="text-[#1A1A1A] font-semibold text-sm md:text-base leading-snug group-hover:text-[#C9A84C] transition-colors duration-200">
+        <span className="text-[#000000] font-semibold text-sm md:text-base leading-snug group-hover:text-[#C9A84C] transition-colors duration-200">
           {question}
         </span>
         <span className="flex-shrink-0 mt-0.5 text-[#C9A84C]">

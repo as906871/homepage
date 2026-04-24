@@ -9,9 +9,9 @@ const ServicesSection = () => {
 
   return (
     <section id="services" className="bg-[#F5EFE4]">
-      <div className="py-20 px-4">
+      <div className="py-8 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-[#1A1A1A] mb-12">
+          <h2 className="font-serif text-4xl font-semibold text-[#000000] mb-12">
             Our Services
           </h2>
           <div className="flex flex-wrap justify-center gap-10 mb-12">
@@ -61,7 +61,7 @@ const ServicesSection = () => {
         font-serif
         text-[30px] md:text-[36px]
         font-semibold
-        text-[#1A1A1A]
+        text-[#000000]
         leading-[1.25]
         mb-6
       "
@@ -79,7 +79,7 @@ const ServicesSection = () => {
                   >
                     <span
                       className={`text-sm font-medium ${
-                        openIndex === i ? "text-[#C9A84C]" : "text-[#1A1A1A]"
+                        openIndex === i ? "text-[#C9A84C]" : "text-[#000000]"
                       }`}
                     >
                       {openIndex === i ? "—" : "+"} {r.title}

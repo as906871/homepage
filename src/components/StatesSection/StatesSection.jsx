@@ -7,7 +7,7 @@ const StatesSection = () => {
   return (
     <section className="bg-[#F5EFE0] pt-10 px-4">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="font-serif text-3xl md:text-4xl font-semibold text-[#1A1A1A] mb-14">
+        <h2 className="font-serif text-3xl md:text-4xl font-semibold text-[#000000] mb-14">
           Now Accepting Patients In The<br />Following States
         </h2>
 

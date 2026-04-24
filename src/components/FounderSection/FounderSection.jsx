@@ -31,11 +31,11 @@ const FounderSection = () => {
               minHeight: "360px"
             }}
           >
-            <h2 className="font-serif text-[32px] font-semibold text-[#1A1A1A] mb-2">
+            <h2 className="font-serif text-[32px] font-semibold text-[#000000] mb-2">
               Meet The Founder
             </h2>
 
-            <p className="font-serif text-[20px] font-semibold text-[#1A1A1A] mb-1">
+            <p className="font-serif text-[20px] font-semibold text-[#000000] mb-1">
               Lakeisha Appleton
             </p>
 

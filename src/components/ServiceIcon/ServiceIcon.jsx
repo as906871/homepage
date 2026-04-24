@@ -8,7 +8,7 @@ const ServiceIcon = ({ icon, label }) => {
           {icon}
         </span>
       </div>
-      <span className="text-xs text-center font-medium text-[#1A1A1A] max-w-[80px] leading-snug">{label}</span>
+      <span className="text-xs text-center font-medium text-[#000000] max-w-[80px] leading-snug">{label}</span>
     </div>
   )
 }

@@ -26,14 +26,14 @@ const QuoteSection = () => {
                C1260,0 1305,60 1350,30
                C1395,10 1440,30 1440,30
                L1440,60 L0,60 Z"
-            fill="#1A1A1A"
+            fill="#000000"
           />
         </svg>
       </div>
 
-      <div className="bg-[#1A1A1A] py-10 px-6">
+      <div className="bg-[#000000] py-6 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <span className="text-[#C9A84C] text-5xl font-serif leading-none block mb-2">"</span>
+          <span className="text-[#C9A84C] text-5xl font-serif leading-none block">"</span>
           <p className="font-serif text-white text-xl md:text-2xl font-medium italic leading-relaxed">
             We help people living with and experiencing difficult times
           </p>
@@ -62,7 +62,7 @@ const QuoteSection = () => {
                C1260,60 1305,0 1350,30
                C1395,50 1440,30 1440,30
                L1440,0 L0,0 Z"
-            fill="#1A1A1A"
+            fill="#000000"
           />
         </svg>
       </div>

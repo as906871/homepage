@@ -5,7 +5,7 @@ import { steps } from "../../data/Data";
 
 const StepsSection = () => {
   return (
-    <section className="bg-[#1A1A1A] py-16 px-4">
+    <section className="bg-[#000000] py-16 px-4">
       <div className="max-w-6xl mx-auto text-center">
         <h2
           className="
@@ -22,12 +22,23 @@ const StepsSection = () => {
           Four Simple Steps To <br />
           Get Started
         </h2>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10 relative">
           {steps.map((s, i) => (
-            <div key={i} className="relative">
+            <div key={i} className="relative flex justify-center">
               <StepCard {...s} />
+
               {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-7 left-[calc(50%+28px)] w-[calc(100%-16px)] border-t-2 border-dashed border-[#C9A84C]/30" />
+                <div
+                  className="
+          hidden md:block
+          absolute
+          top-5
+          left-[60%]
+          w-[80%]
+          border-t border-dashed border-[#C9A84C]/40
+        "
+                />
               )}
             </div>
           ))}

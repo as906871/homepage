@@ -3,7 +3,7 @@ import { footerLinks, socialIcons } from "../../data/Data";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1A1A1A] text-white pt-14 pb-6 px-6">
+    <footer className="bg-[#000000] text-white pt-14 pb-6 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-12">
           {Object.entries(footerLinks).map(([heading, links]) => (
