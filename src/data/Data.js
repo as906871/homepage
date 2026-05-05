@@ -155,6 +155,22 @@ export const states = [
   },
 ];
 
+
+export const faqData = [
+  {
+    question: "What services do you offer?",
+    answer: "We provide therapy, psychiatric consultations, and mental wellness programs."
+  },
+  {
+    question: "How can I book an appointment?",
+    answer: "Competition refers to a contest or rivalry between two or more parties—such as businesses, individuals, or species—vying for the same resource, reward, or market share. In economic terms, it is the mechanism that drives companies to innovate, improve quality, and lower prices to attract customers"
+  },
+  {
+    question: "Are online consultations available?",
+    answer: "Replacement/Potential Competition: Emerging, disruptive technologies that could replace a current company's offerings.Pure Competition (Perfect Competition): A theoretical market with many producers selling identical products, resulting in no company having control over market price.Monopolistic Competition: A market structure with many competitors selling similar, but slightly differentiated products, where companies have some control over price through branding."
+  }
+];
+
 export const whyReasons = [
   {
     title: "Convenient access",

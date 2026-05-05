@@ -125,7 +125,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#111111] shadow-md">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#000000] shadow-md">
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-10">
           <div className="flex items-center justify-between h-[60px]">
 
@@ -175,7 +175,7 @@ const Navbar = () => {
             mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
           } overflow-hidden`}
         >
-          <div className="bg-[#111111] px-4 pb-6">
+          <div className="bg-[#000000] px-4 pb-6">
             {NAV_LINKS.map((link, i) => (
               <MobileNavItem
                 key={i}

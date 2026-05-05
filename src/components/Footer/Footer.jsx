@@ -45,7 +45,7 @@ const Footer = () => {
               href="mailto:Career@adapsychiatry.com"
               className="text-[#C9A84C] text-xs hover:underline"
             >
-              Career@adapsychiatry.com
+              Career@adapatry.com
             </a>
           </div>
 
@@ -57,7 +57,7 @@ const Footer = () => {
                 </span>
               </div>
               <span className="text-white font-serif text-base font-semibold tracking-wide leading-tight">
-                ADA PSYCHIATRY
+                ADA PSYCHY
               </span>
             </div>
 
