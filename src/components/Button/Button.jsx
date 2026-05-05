@@ -18,7 +18,7 @@ const Button = ({
         inline-flex items-center gap-2
         px-6 py-2
         rounded-full
-        text-black text-sm font-medium
+        text-black text-md font-medium
         shadow-sm
         transition-all duration-200
         hover:shadow-md

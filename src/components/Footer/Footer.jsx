@@ -14,12 +14,14 @@ const Footer = () => {
               <ul className="space-y-2">
                 {links.map((link, i) => (
                   <li key={i}>
-                    <a
-                      href="#"
-                      className="text-gray-400 text-xs hover:text-[#C9A84C] transition-colors duration-200"
-                    >
-                      {link}
-                    </a>
+
+                     <button
+                    key={i}
+                   className="text-gray-400 text-xs hover:text-[#C9A84C] transition-colors duration-200"
+                    onClick={() => console.log(i)}
+                  >
+                    {link}
+                  </button>
                   </li>
                 ))}
               </ul>
@@ -77,13 +79,13 @@ const Footer = () => {
               </h5>
               <div className="flex items-center gap-3">
                 {socialIcons.map((s, i) => (
-                  <a
+                  <button
                     key={i}
-                    href={s.href}
                     className="text-gray-400 hover:text-[#C9A84C] transition-colors duration-200 text-base"
+                    onClick={() => console.log(s)}
                   >
                     {s.icon}
-                  </a>
+                  </button>
                 ))}
               </div>
             </div>

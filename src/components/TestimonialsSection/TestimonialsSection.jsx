@@ -1,53 +1,112 @@
-import React, { useState } from 'react'
-import Testimonial from '../Testimonial'
-import { testimonials } from '../../data/Data'
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+} from "react";
+import Testimonial from "../Testimonial/Testimonial";
+import { testimonials } from "../../data/Data";
 
+const GAP = 24; 
+const INTERVAL = 3500;
 
 const TestimonialsSection = () => {
-  const [active, setActive] = useState(1)
+  const [active, setActive]           = useState(0);
+  const [visibleCount, setVisibleCount] = useState(3);
+  const [cardWidth, setCardWidth]       = useState(300);
 
-  // const prev = () => setActive((p) => (p - 1 + testimonials.length) % testimonials.length)
-  // const next = () => setActive((p) => (p + 1) % testimonials.length)
+  const wrapperRef = useRef(null);
+  const timerRef   = useRef(null);
+  const total       = testimonials.length;
 
-  const getVisible = () => {
-    const prev1 = (active - 1 + testimonials.length) % testimonials.length
-    const next1 = (active + 1) % testimonials.length
-    return [prev1, active, next1]
-  }
+  const recalc = useCallback(() => {
+    const w = window.innerWidth;
+    const count = w >= 900 ? 3 : w >= 560 ? 2 : 1;
+    setVisibleCount(count);
+    if (wrapperRef.current) {
+      const cw =
+        (wrapperRef.current.offsetWidth - GAP * (count - 1)) / count;
+      setCardWidth(cw);
+    }
+  }, []);
 
-  const visible = getVisible()
+  useEffect(() => {
+    recalc();
+    window.addEventListener("resize", recalc);
+    return () => window.removeEventListener("resize", recalc);
+  }, [recalc]);
+
+  const goTo = useCallback((idx) => {
+    setActive((idx + total) % total);
+  }, [total]);
+
+  const startTimer = useCallback(() => {
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setActive((prev) => (prev + 1) % total);
+    }, INTERVAL);
+  }, [total]);
+
+  useEffect(() => {
+    startTimer();
+    return () => clearInterval(timerRef.current);
+  }, [startTimer]);
+
+  const translateX = (() => {
+    if (visibleCount <= 2) return active * (cardWidth + GAP);
+    const prev = (active - 1 + total) % total;
+    return prev * (cardWidth + GAP);
+  })();
 
   return (
-    <section className="bg-[#F5EFE4] py-20 px-4">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center text-[#000000] mb-12">
-          What Our Patients Are saying
-        </h2>
+    <section className="bg-[#F5EFE4] py-20 px-4 md:px-6">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          {visible.map((idx, pos) => (
-            <Testimonial
-              key={idx}
-              {...testimonials[idx]}
-              active={pos === 1}
-            />
-          ))}
-        </div>
+      <h2 className="
+        font-serif text-center font-semibold text-[#1a1a1a] mb-12
+        text-[clamp(1.6rem,4vw,2.6rem)]
+      ">
+        What Our Patients Are Saying
+      </h2>
 
-        <div className="flex justify-center gap-2">
-          {testimonials.map((_, i) => (
-            <button
+      <div className="overflow-hidden max-w-[1100px] mx-auto" ref={wrapperRef}>
+        <div
+          className="flex"
+          style={{
+            gap: `${GAP}px`,
+            transform: `translateX(-${translateX}px)`,
+            transition: "transform 0.55s cubic-bezier(0.4,0,0.2,1)",
+          }}
+        >
+          {testimonials.map((t, i) => (
+            <div
               key={i}
-              onClick={() => setActive(i)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                i === active ? 'bg-[#C9A84C] w-5' : 'bg-[#C9A84C]/30'
-              }`}
-            />
+              style={{ width: cardWidth, minWidth: cardWidth }}
+            >
+              <Testimonial {...t} active={i === active} />
+            </div>
           ))}
         </div>
       </div>
-    </section>
-  )
-}
 
-export default TestimonialsSection
+      <div className="flex justify-center gap-2.5 mt-9 flex-wrap">
+        {testimonials.map((_, i) => (
+
+           <button
+            key={i}
+             onClick={() => { goTo(i); startTimer(); }}
+            className="transition-all duration-300 hover:scale-110"
+            style={{
+              width: i === active ? "16px" : "16px",
+              height: i === active ? "16px" : "16px",
+              background: i === active ? "linear-gradient(90deg, #C18C2C 0%, #FCF38A 50%, #C18C2C 100%" : "rgba(255,255,255,0.45)",
+              clipPath: "polygon(50% 0%, 85% 15%, 100% 50%, 75% 90%, 25% 90%, 0% 50%, 15% 15%)"
+            }}
+          />
+        ))}
+      </div>
+
+    </section>
+  );
+};
+
+export default TestimonialsSection;

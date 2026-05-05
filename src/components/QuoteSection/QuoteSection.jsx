@@ -2,65 +2,76 @@ import React from 'react'
 
 const QuoteSection = () => {
   return (
-    <div className="relative">
-
-      <div className="w-full overflow-hidden leading-none">
+    <div style={{ width: '100%', position: 'relative' }}>
+      <div style={{ lineHeight: 0, display: 'block', width: '100%' }}>
         <svg
-          viewBox="0 0 1440 60"
+          viewBox="0 0 1440 120"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full block"
           preserveAspectRatio="none"
-          style={{ height: '50px' }}
+          style={{ display: 'block', width: '100%', height: 'clamp(45px, 5vw, 80px)' }}
         >
           <path
-            d="M0,0
-               C45,60 90,60 135,30
-               C180,0 225,60 270,30
-               C315,0 360,60 405,30
-               C450,0 495,60 540,30
-               C585,0 630,60 675,30
-               C720,0 765,60 810,30
-               C855,0 900,60 945,30
-               C990,0 1035,60 1080,30
-               C1125,0 1170,60 1215,30
-               C1260,0 1305,60 1350,30
-               C1395,10 1440,30 1440,30
-               L1440,60 L0,60 Z"
+            d="M0,60
+               C60,20 120,100 180,60
+               C240,20 300,100 360,60
+               C420,20 480,100 540,60
+               C600,20 660,100 720,60
+               C780,20 840,100 900,60
+               C960,20 1020,100 1080,60
+               C1140,20 1200,100 1260,60
+               C1320,20 1380,100 1440,60
+               L1440,120 L0,120 Z"
             fill="#000000"
           />
         </svg>
       </div>
 
-      <div className="bg-[#000000] py-6 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <span className="text-[#C9A84C] text-5xl font-serif leading-none block">"</span>
-          <p className="font-serif text-white text-xl md:text-2xl font-medium italic leading-relaxed">
-            We help people living with and experiencing difficult times
+      <div style={{ backgroundColor: '#000000' }}>
+        <div style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
+          <span
+            style={{
+              display: 'block',
+              color: '#C9A84C',
+              fontSize: 'clamp(32px, 5vw, 56px)',
+              fontFamily: 'Georgia, "Times New Roman", serif',
+              lineHeight: 0.9,
+            }}
+          >
+            "
+          </span>
+          <p
+            style={{
+              margin: 0,
+              fontFamily: 'Georgia, "Times New Roman", serif',
+              color: '#ffffff',
+              fontSize: 'clamp(13px, 1.9vw, 24px)',
+              fontStyle: 'italic',
+              fontWeight: 400,
+              lineHeight: 1.65,
+            }}
+          >
+            "We help people living with and experiencing difficult times"
           </p>
         </div>
       </div>
 
-      <div className="w-full overflow-hidden leading-none">
+      <div style={{ lineHeight: 0, display: 'block', width: '100%' }}>
         <svg
-          viewBox="0 0 1440 60"
+          viewBox="0 0 1440 120"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full block"
           preserveAspectRatio="none"
-          style={{ height: '50px' }}
+          style={{ display: 'block', width: '100%', height: 'clamp(45px, 5vw, 80px)' }}
         >
           <path
             d="M0,60
-               C45,0 90,0 135,30
-               C180,60 225,0 270,30
-               C315,60 360,0 405,30
-               C450,60 495,0 540,30
-               C585,60 630,0 675,30
-               C720,60 765,0 810,30
-               C855,60 900,0 945,30
-               C990,60 1035,0 1080,30
-               C1125,60 1170,0 1215,30
-               C1260,60 1305,0 1350,30
-               C1395,50 1440,30 1440,30
+               C60,100 120,20 180,60
+               C240,100 300,20 360,60
+               C420,100 480,20 540,60
+               C600,100 660,20 720,60
+               C780,100 840,20 900,60
+               C960,100 1020,20 1080,60
+               C1140,100 1200,20 1260,60
+               C1320,100 1380,20 1440,60
                L1440,0 L0,0 Z"
             fill="#000000"
           />

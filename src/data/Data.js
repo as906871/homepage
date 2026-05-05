@@ -5,15 +5,33 @@ import {
   FaTiktok,
   FaLinkedinIn,
 } from "react-icons/fa";
-import { MdOutlinePsychology } from "react-icons/md";
-import { FaPills, FaHeartbeat, FaBrain, FaDna } from "react-icons/fa";
-import { RiMentalHealthLine } from "react-icons/ri";
 import {
   BsCalendarCheck,
   BsPeopleFill,
   BsClipboardCheck,
   BsFileEarmarkMedical,
 } from "react-icons/bs";
+import humanBrain from "../assets/humanBrain.svg";
+import brain from "../assets/brain.svg"
+import metalHealth from "../assets/mentalHealth.svg"
+
+export const services = [
+  { icon: humanBrain, label: "Psychiatric Evaluation" },
+  { icon: brain, label: "Medication Management" },
+  { icon: metalHealth, label: "Supportive Psychotherapy" },
+  { icon: humanBrain, label: "ADHD Screening" },
+  { icon: brain, label: "MAT Treatment" },
+  { icon: metalHealth, label: "Gene Sight Testing" },
+];
+
+
+export const NAV_LINKS = [
+  { label: "Who we are",  items: ["About Us", "Our Team", "Our Mission"] },
+  { label: "Who we treat", items: ["Mental Health", "Addiction & Recovery", "Weight Management"] },
+  { label: "Services",    href:  "#services" },
+  { label: "Resources",   items: ["Blog", "FAQs", "Fees and Insurance"] },
+];
+
 
 export const treatments = [
   {
@@ -137,15 +155,6 @@ export const states = [
   },
 ];
 
-export const services = [
-  { icon: <MdOutlinePsychology size={28} />, label: "Psychiatric Evaluation" },
-  { icon: <FaPills size={28} />, label: "Medication Management" },
-  { icon: <FaHeartbeat size={28} />, label: "Supportive Psychotherapy" },
-  { icon: <FaBrain size={28} />, label: "ADHD Screening" },
-  { icon: <RiMentalHealthLine size={28} />, label: "MAT Treatment" },
-  { icon: <FaDna size={28} />, label: "Gene Sight Testing" },
-];
-
 export const whyReasons = [
   {
     title: "Convenient access",
@@ -217,7 +226,7 @@ export const slides = [
     description:
       "Our goal is to provide a safe, comfortable, and warm environment so that you can openly discuss your mental health needs.",
     image:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1600&q=85",
+      "https://media.istockphoto.com/id/1511326622/photo/stress-migraine-and-motion-blur-with-a-business-man-in-a-meeting-feeling-frustrated-tired-or.webp?a=1&b=1&s=612x612&w=0&k=20&c=byYM64bOZ5HhpOAaQAw8LGBIl_c1Y0ScDlb0BMfRonI=",
   },
   {
     heading: "Compassionate Care\nFor Every Mind",

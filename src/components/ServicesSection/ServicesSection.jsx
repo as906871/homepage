@@ -3,6 +3,7 @@ import ServiceIcon from "../ServiceIcon";
 import Button from "../Button";
 import { services, whyReasons } from "../../data/Data";
 import { FiPlus, FiMinus } from "react-icons/fi";
+import whyShould from "../../assets/whyShould.svg";
 
 const ServicesSection = () => {
   const [openIndex, setOpenIndex] = React.useState(0);
@@ -24,76 +25,53 @@ const ServicesSection = () => {
         </div>
       </div>
 
-      <div className="bg-[#EFE6D2] py-20 px-4 mt-10">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-14 items-start">
-          <div className="w-full md:w-[420px] flex-shrink-0">
-            <div className="relative w-full">
-              <div
-                className="
-        absolute
-        top-[12px]
-        left-[12px]
-        w-full
-        h-full
-        border-r-2
-        border-b-2
-        border-[#C9A84C]
-      "
-              />
-
+      <div className="bg-[#F7EED9] py-12 sm:py-16 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+          <div className="w-full lg:min-w-[550px] lg:max-w-[620px] flex-shrink-0">
+            <div className="relative">
+              <div className="absolute top-4 left-4 w-full h-full border-r-2 border-b-2 border-[#C9A84C]" />
               <img
-                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&q=80"
+                src={whyShould}
                 alt="Why Ada Psychiatry"
-                className="
-        relative
-        w-full
-        h-[380px]
-        object-cover
-        bg-white
-      "
+                className="relative w-full h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px] object-cover"
               />
             </div>
           </div>
 
-          <div className="flex-1">
-            <h2
-              className="
-        font-serif
-        text-[30px] md:text-[36px]
-        font-semibold
-        text-[#000000]
-        leading-[1.25]
-        mb-6
-      "
-            >
-              Why Should You Choose <br />
+          <div className="flex-1 w-full">
+            <h2 className="font-serif text-[26px] sm:text-[32px] md:text-[38px] lg:text-[42px] leading-tight text-black mb-6">
+              Why Should You Choose <br className="hidden sm:block" />
               Ada Psychiatry?
             </h2>
 
-            <div className="mt-6 max-w-[520px]">
-              {whyReasons.map((r, i) => (
+            <div className="max-w-[560px]">
+              {whyReasons.map((item, i) => (
                 <div key={i} className="border-b border-[#C9A84C]">
                   <button
                     onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
-                    className="w-full flex items-center justify-between py-4 text-left"
+                    className="w-full flex items-center justify-between py-4"
                   >
                     <span
-                      className={`text-sm font-medium ${
-                        openIndex === i ? "text-[#C9A84C]" : "text-[#000000]"
+                      className={`text-[15px] sm:text-[16px] font-medium flex items-center gap-2 ${
+                        openIndex === i ? "text-[#C9A84C]" : "text-black"
                       }`}
                     >
-                      {openIndex === i ? "—" : "+"} {r.title}
-                    </span>
-                    <span className="text-[#C9A84C] text-lg">
                       {openIndex === i ? <FiMinus /> : <FiPlus />}
+                      {item.title}
                     </span>
                   </button>
 
-                  {openIndex === i && (
-                    <p className="text-gray-600 text-sm pb-4 leading-relaxed pl-4">
-                      {r.description}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      openIndex === i
+                        ? "max-h-[200px] opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <p className="text-gray-600 text-sm leading-relaxed pb-4 pl-6 pr-2">
+                      {item.description}
                     </p>
-                  )}
+                  </div>
                 </div>
               ))}
             </div>
