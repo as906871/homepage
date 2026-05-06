@@ -156,6 +156,9 @@ export const states = [
 ];
 
 
+export const GAP = 24;
+export const INTERVAL = 3500;
+
 export const faqData = [
   {
     question: "What services do you offer?",
